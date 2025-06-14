@@ -4,7 +4,7 @@ export interface OptionsInterface {
     tableName?: string;
 
 }
-export interface Board {
+export interface BoardInterface {
     id: number;
     name: string;
     userId: number;

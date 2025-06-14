@@ -38,8 +38,11 @@ module.exports = (sequelize: any, DataTypes: any) => {
 
         static associate(models: any) {
             // Associations go here
+             User.hasMany(models.Board, { foreignKey: 'userId' });
+             User.hasMany(models.List, { foreignKey: 'userId' });
+             User.hasMany(models.Card, { foreignKey: 'userId' });
         }
-        // declare public static associations: { [key: string]: Association<Model<any, any>, Model<any, any>>; };
+        
 
     }
     User.init(
