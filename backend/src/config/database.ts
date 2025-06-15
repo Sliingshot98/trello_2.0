@@ -1,7 +1,6 @@
 import config from './index'
 
 const db = config.db;
-const database = db.database;
 const schema = db.schema
 
 module.exports = {
