@@ -1,13 +1,13 @@
 import config from './index'
 
 const db = config.db;
-const schema = db.schema
+const schema = db.schema;
 
 module.exports = {
-    development: {
+  development: {
     dialect: 'sqlite',
     seederStorage: 'sequelize',
-    storage: config.db,
+    storage: db.database,
     logQueryParameters: true,
     typeValidation: true
   },

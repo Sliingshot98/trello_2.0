@@ -38,11 +38,11 @@ module.exports = (sequelize: any, DataTypes: any) => {
 
         static associate(models: any) {
             // Associations go here
-             User.hasMany(models.Board, { foreignKey: 'userId' });
-             User.hasMany(models.List, { foreignKey: 'userId' });
-             User.hasMany(models.Card, { foreignKey: 'userId' });
+            User.hasMany(models.Board, { foreignKey: 'userId' });
+            User.hasMany(models.List, { foreignKey: 'userId' });
+            User.hasMany(models.Card, { foreignKey: 'userId' });
         }
-        
+
 
     }
     User.init(
@@ -122,3 +122,4 @@ module.exports = (sequelize: any, DataTypes: any) => {
     )
     return User;
 }
+export.module Users;
