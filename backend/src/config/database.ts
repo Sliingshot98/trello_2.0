@@ -7,7 +7,7 @@ module.exports = {
   development: {
     dialect: 'sqlite',
     seederStorage: 'sequelize',
-    storage: db.database,
+    storage: config.dbFile,
     logQueryParameters: true,
     typeValidation: true
   },

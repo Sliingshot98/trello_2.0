@@ -122,4 +122,4 @@ module.exports = (sequelize: any, DataTypes: any) => {
     )
     return User;
 }
-export.module Users;
+export default module.exports;

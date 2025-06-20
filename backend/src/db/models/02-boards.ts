@@ -1,5 +1,5 @@
 import { Model, DataTypes, Optional } from 'sequelize';
-import { Users } from './01-users'
+import Users from './01-users';
 
 interface BoardAttributes {
     id: number;
@@ -37,8 +37,11 @@ module.exports = (sequelize: any) => {
                 type: DataTypes.INTEGER,
                 allowNull: false,
                 references: {
-                    Users.id
-                }
+                    model: Users,
+                    key: 'id',
+                },
+                onDelete: 'CASCADE',
+                onUpdate: 'CASCADE',
             },
             title: {
                 type: DataTypes.STRING(50),
@@ -60,3 +63,4 @@ module.exports = (sequelize: any) => {
 
     return Board;
 };
+export default module.exports;

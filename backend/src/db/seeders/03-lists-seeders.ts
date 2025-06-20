@@ -1,13 +1,12 @@
 'use strict';
 import { OptionsInterface } from '../../typings/seeders';
-import { List } from '../../typings/seeders';
 
-let options:OptionsInterface = {};
-if (process.env.NODE_ENV === 'production') {        
-  options.schema = process.env.SCHEMA; // define your schema in options object
+let options: OptionsInterface = {};
+if (process.env.NODE_ENV === 'production') {
+    options.schema = process.env.SCHEMA; // define your schema in options object
 }
 module.exports = {
-    up: async (queryInterface: any, Sequelize:any) => {
+    up: async (queryInterface: any, Sequelize: any) => {
         options.tableName = 'Lists';
         return queryInterface.bulkInsert(options, [
             {
@@ -31,7 +30,7 @@ module.exports = {
         ]);
     }
     ,
-    down: async (queryInterface: any, Sequelize:any) => {
+    down: async (queryInterface: any, Sequelize: any) => {
         options.tableName = 'Lists';
         const Op = Sequelize.Op;
         return queryInterface.bulkDelete(options, {

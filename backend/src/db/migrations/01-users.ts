@@ -2,13 +2,13 @@
 
 import { OptionsInterface } from "../../typings/seeders";
 
-let options:OptionsInterface = {};
+let options: OptionsInterface = {};
 if (process.env.NODE_ENV === 'production') {
   options.schema = process.env.SCHEMA;
 }
 
 module.exports = {
-  up: async (queryInterface:any, Sequelize:any) => {
+  up: async (queryInterface: any, Sequelize: any) => {
     return queryInterface.createTable("Users", {
       id: {
         allowNull: false,
@@ -17,11 +17,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       firstName: {
-        allowNull:false,
+        allowNull: false,
         type: Sequelize.STRING(30)
       },
       lastName: {
-        allowNull:false,
+        allowNull: false,
         type: Sequelize.STRING(30)
       },
       username: {
@@ -50,7 +50,7 @@ module.exports = {
       }
     }, options);
   },
-  down: async (queryInterface:any, Sequelize:any) => {
+  down: async (queryInterface: any, Sequelize: any) => {
     options.tableName = "Users";
     return queryInterface.dropTable(options);
   }
