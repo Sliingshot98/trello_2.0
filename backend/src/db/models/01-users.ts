@@ -40,7 +40,6 @@ module.exports = (sequelize: any, DataTypes: any) => {
             // Associations go here
             User.hasMany(models.Board, { foreignKey: 'userId' });
             User.hasMany(models.List, { foreignKey: 'userId' });
-            User.hasMany(models.Card, { foreignKey: 'userId' });
         }
 
 
